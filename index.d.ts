@@ -77,6 +77,14 @@ interface TabsProps {
   itemStyle: object
 
   /**
+   * Automatically uppercase text
+   * Type: boolean
+   *
+   * Default is true
+   */
+  upperCase: boolean
+
+  /**
    * Handler that's emitted every time the user presses a tab.
    * You can use this to change the selected index
    * @param index
