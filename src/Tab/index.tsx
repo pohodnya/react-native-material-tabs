@@ -27,15 +27,16 @@ interface TabProps {
   inActiveTextColor: string
   active?: boolean
   itemStyle: object
+  upperCase: boolean
   onPress?(): void
 }
 
-const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inActiveTextColor, tabWidth, stretch, contentType, iconSet, itemStyle}) => {
+const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inActiveTextColor, tabWidth, stretch, contentType, iconSet, itemStyle, upperCase}) => {
   const color = active ? activeTextColor : inActiveTextColor
 
   const renderTextTab = (color, text, itemStyle) => {
     return (
-      <TabText color={color} style={itemStyle}>{text.toUpperCase()}</TabText>
+      <TabText color={color} style={itemStyle}>{upperCase ? text.toUpperCase() : text}</TabText>
     )
   }
 

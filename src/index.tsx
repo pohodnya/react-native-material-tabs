@@ -15,6 +15,7 @@ interface TabsDefaultProps {
   iconSet: string[] | string
   scrollable: boolean
   itemStyle: object
+  upperCase: boolean
 }
 
 interface TabsProps extends TabsDefaultProps {
@@ -153,6 +154,7 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
                 tabWidth={!this.props.scrollable ? this.state.tabWidth : this.state.barWidth * 0.4}
                 inActiveTextColor={this.props.inactiveTextColor}
                 itemStyle={this.props.itemStyle}
+                upperCase={this.props.upperCase}
               />
             ))}
           </TabTrack>
@@ -181,5 +183,6 @@ MaterialTabs.defaultProps = {
   scrollable: false,
   contentType: 'text',
   iconSet: 'Ionicons',
-  itemStyle: {}
+  itemStyle: {},
+  upperCase: true
 }

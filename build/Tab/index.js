@@ -19,12 +19,15 @@ const Tab = ({
   stretch,
   contentType,
   iconSet,
-  itemStyle
+  itemStyle,
+  upperCase
 }) => {
   const color = active ? activeTextColor : inActiveTextColor
   const renderTextTab = (color, text, itemStyle) => {
     return (
-      <TabText color={color} style={itemStyle}>{text.toUpperCase()}</TabText>
+      <TabText color={color} style={itemStyle}>
+        {upperCase ? text.toUpperCase() : text}
+      </TabText>
     )
   }
   const renderIconTab = (color, text, iconSet, itemStyle) => {

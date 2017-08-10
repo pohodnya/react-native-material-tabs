@@ -119,6 +119,7 @@ export default class MaterialTabs extends React.Component {
                 }
                 inActiveTextColor={this.props.inactiveTextColor}
                 itemStyle={this.props.itemStyle}
+                upperCase={this.props.upperCase}
               />
             ))}
           </TabTrack>
@@ -153,5 +154,6 @@ MaterialTabs.defaultProps = {
   scrollable: false,
   contentType: 'text',
   iconSet: 'Ionicons',
-  itemStyle: {}
+  itemStyle: {},
+  upperCase: true
 }
