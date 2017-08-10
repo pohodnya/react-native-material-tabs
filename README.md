@@ -41,6 +41,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | indicatorColor | #fff | string | Color of the indicator |
 | activeTextColor | #fff | string | Color of the text for the selected tab |
 | inactiveTextColor | rgba(255, 255, 255, 0.7) | string | Color of the text for inactive tabs |
+| itemStyle | {} | object | Any supported styles for tabs |
 | items | none | array(string) | The headers for the individual tabs. If contentType is 'icon' you must pass an array of icon names from [`react-native-vector-icons`](https://github.com/oblador/react-native-vector-icons) |
 | iconSet | Ionicons | string or array(string) | If contentType is 'icon', then you can set for each or for all tabs iconSet from react-native-vector-icons. Available values:  'Entypo', 'EvilIcons', 'FontAwesome', 'Foundation', 'Ionicons', 'MaterialCommunityIcons', 'MaterialIcons', 'SimpleLineIcons', 'Zocial'|
 | selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |

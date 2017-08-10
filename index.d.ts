@@ -69,6 +69,14 @@ interface TabsProps {
   iconSet: string[] | string
 
   /**
+   * Style object
+   * Type: object
+   *
+   * Default is {}
+   */
+  itemStyle: object
+
+  /**
    * Handler that's emitted every time the user presses a tab.
    * You can use this to change the selected index
    * @param index

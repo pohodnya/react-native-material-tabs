@@ -18,59 +18,103 @@ const Tab = ({
   tabWidth,
   stretch,
   contentType,
-  iconSet
+  iconSet,
+  itemStyle
 }) => {
   const color = active ? activeTextColor : inActiveTextColor
-  const renderTextTab = (color, text) => {
-    return <TabText color={color}>{text.toUpperCase()}</TabText>
+  const renderTextTab = (color, text, itemStyle) => {
+    return (
+      <TabText color={color} style={itemStyle}>{text.toUpperCase()}</TabText>
+    )
   }
-  const renderIconTab = (color, text, iconSet) => {
+  const renderIconTab = (color, text, iconSet, itemStyle) => {
     switch (iconSet) {
       case 'Entypo':
-        return <Entypo name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Entypo
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       case 'EvilIcons':
-        return <Entypo name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Entypo
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       case 'FontAwesome':
-        return <FontAwesome name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <FontAwesome
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       case 'Foundation':
-        return <Foundation name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Foundation
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       case 'Ionicons':
-        return <Ionicons name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Ionicons
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       case 'MaterialCommunityIcons':
         return (
           <MaterialCommunityIcons
             name={text}
-            style={[{ color: color }, IconStyle]}
+            style={[{ color: color }, IconStyle, itemStyle]}
           />
         )
       case 'MaterialIcons':
         return (
-          <MaterialIcons name={text} style={[{ color: color }, IconStyle]} />
+          <MaterialIcons
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
         )
       case 'SimpleLineIcons':
         return (
-          <SimpleLineIcons name={text} style={[{ color: color }, IconStyle]} />
+          <SimpleLineIcons
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
         )
       case 'Zocial':
-        return <Zocial name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Zocial
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
       default:
-        return <Ionicons name={text} style={[{ color: color }, IconStyle]} />
+        return (
+          <Ionicons
+            name={text}
+            style={[{ color: color }, IconStyle, itemStyle]}
+          />
+        )
     }
   }
-  const renderTab = (contentType, color, text, iconSet) => {
+  const renderTab = (contentType, color, text, iconSet, itemStyle) => {
     switch (contentType) {
       case 'text':
-        return renderTextTab(color, text)
+        return renderTextTab(color, text, itemStyle)
       case 'icon':
-        return renderIconTab(color, text, iconSet)
+        return renderIconTab(color, text, iconSet, itemStyle)
       default:
-        return renderTextTab(color, text)
+        return renderTextTab(color, text, itemStyle)
     }
   }
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
-        {renderTab(contentType, color, text, iconSet)}
+        {renderTab(contentType, color, text, iconSet, itemStyle)}
       </TabBody>
     </TabButton>
   )

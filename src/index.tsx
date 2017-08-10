@@ -14,6 +14,7 @@ interface TabsDefaultProps {
   contentType: string
   iconSet: string[] | string
   scrollable: boolean
+  itemStyle: object
 }
 
 interface TabsProps extends TabsDefaultProps {
@@ -151,6 +152,7 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
                 activeTextColor={this.props.activeTextColor}
                 tabWidth={!this.props.scrollable ? this.state.tabWidth : this.state.barWidth * 0.4}
                 inActiveTextColor={this.props.inactiveTextColor}
+                itemStyle={this.props.itemStyle}
               />
             ))}
           </TabTrack>
@@ -178,5 +180,6 @@ MaterialTabs.defaultProps = {
   inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
   scrollable: false,
   contentType: 'text',
-  iconSet: 'Ionicons'
+  iconSet: 'Ionicons',
+  itemStyle: {}
 }

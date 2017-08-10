@@ -118,6 +118,7 @@ export default class MaterialTabs extends React.Component {
                     : this.state.barWidth * 0.4
                 }
                 inActiveTextColor={this.props.inactiveTextColor}
+                itemStyle={this.props.itemStyle}
               />
             ))}
           </TabTrack>
@@ -151,5 +152,6 @@ MaterialTabs.defaultProps = {
   inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
   scrollable: false,
   contentType: 'text',
-  iconSet: 'Ionicons'
+  iconSet: 'Ionicons',
+  itemStyle: {}
 }
